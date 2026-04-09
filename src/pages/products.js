@@ -5,7 +5,17 @@ export function productsPage(state) {
   const cards = state.products
     .map(
       (product) => `
-        <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+        <article class="relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <button
+            type="button"
+            data-favorite-id="${product.id}"
+            aria-label="Agregar a favoritos"
+            class="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-xl shadow-md transition hover:scale-105 ${
+              state.favorites.has(product.id) ? "text-[#2563EB]" : "text-gray-400"
+            }"
+          >
+            ${state.favorites.has(product.id) ? "&hearts;" : "&#9825;"}
+          </button>
           ${imageMarkup({
             src: product.image,
             alt: product.name,

@@ -1,16 +1,24 @@
 import "./styles/index.css";
 import { footer } from "./components/footer.js";
 import { header } from "./components/header.js";
+import { toast } from "./components/toast.js";
 import { loadingPage } from "./pages/loading.js";
 import { notFoundPage } from "./pages/not-found.js";
 import { contactPage } from "./pages/contact.js";
 import { homePage } from "./pages/home.js";
 import { productDetailPage } from "./pages/product-detail.js";
 import { productsPage } from "./pages/products.js";
-import { loadProducts, state } from "./lib/state.js";
+import {
+  clearFlashMessage,
+  loadProducts,
+  showFlashMessage,
+  state,
+  toggleFavorite,
+} from "./lib/state.js";
 import { hydrateImages } from "./utils/images.js";
 
 const app = document.querySelector("#app");
+let flashTimeoutId = null;
 
 function routeView() {
   const path = window.location.pathname;
@@ -44,6 +52,7 @@ function routeView() {
 
 function render() {
   app.innerHTML = `
+    ${toast(state.flashMessage)}
     ${header()}
     ${routeView()}
     ${footer()}
@@ -67,11 +76,19 @@ document.addEventListener("click", (event) => {
 
   if (favoriteButton) {
     const id = Number(favoriteButton.dataset.favoriteId);
+    const wasAdded = toggleFavorite(id);
 
-    if (state.favorites.has(id)) {
-      state.favorites.delete(id);
-    } else {
-      state.favorites.add(id);
+    if (wasAdded) {
+      showFlashMessage("Producto agregado a favoritos");
+
+      if (flashTimeoutId) {
+        window.clearTimeout(flashTimeoutId);
+      }
+
+      flashTimeoutId = window.setTimeout(() => {
+        clearFlashMessage();
+        render();
+      }, 2200);
     }
 
     render();
