@@ -1,6 +1,6 @@
 # Hermes
 
-Catálogo de producto migrado a HTML + CSS + JavaScript vanilla sobre Vite, con estilos en Tailwind y datos cargados desde un JSON local.
+Tienda con HTML + CSS + JavaScript vanilla sobre Vite, con estilos en Tailwind.
 
 ## Desarrollo
 
