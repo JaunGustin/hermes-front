@@ -11,7 +11,7 @@ export function footer() {
             <h4 class="mb-4">Navegaci&oacute;n</h4>
             <ul class="space-y-2 text-gray-400">
               <li><a href="/" data-link class="hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="/products" data-link class="hover:text-white transition-colors">Cat&aacute;logo</a></li>
+              <li><a href="/products" data-link class="hover:text-white transition-colors">Catálogo</a></li>
               <li><a href="/contact" data-link class="hover:text-white transition-colors">Contacto</a></li>
             </ul>
           </div>

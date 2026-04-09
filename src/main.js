@@ -24,17 +24,17 @@ function routeView() {
   const path = window.location.pathname;
 
   if (state.loading) {
-    document.title = "Hermes | Cat&aacute;logo deportivo";
+    document.title = "Hermes";
     return loadingPage();
   }
 
   if (path === "/") {
-    document.title = "Hermes | Cat&aacute;logo deportivo";
+    document.title = "Hermes";
     return homePage(state);
   }
 
   if (path === "/products") {
-    document.title = "Cat&aacute;logo | Hermes";
+    document.title = "Catálogo | Hermes";
     return productsPage(state);
   }
 

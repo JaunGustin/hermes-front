@@ -39,7 +39,7 @@ export function productsPage(state) {
     <div class="min-h-screen bg-[#F5F5F5]">
       <div class="max-w-7xl mx-auto py-16 px-6">
         <div class="text-center mb-12">
-          <h1 class="text-4xl mb-4 text-[#111111]">Nuestro cat&aacute;logo</h1>
+          <h1 class="text-4xl mb-4 text-[#111111]">Nuestro catálogo</h1>
           <p class="text-xl text-gray-600">Descubre todos nuestros modelos de zapatos deportivos</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

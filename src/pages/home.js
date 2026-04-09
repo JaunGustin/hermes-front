@@ -17,7 +17,7 @@ export function homePage(state) {
               Descubre la nueva generaci&oacute;n de calzado deportivo.
             </p>
             <a href="/products" data-link class="inline-block bg-[#2563EB] hover:bg-[#1d4ed8] text-white px-8 py-3 rounded-lg transition-colors">
-              Ver cat&aacute;logo
+              Ver catálogo
             </a>
           </div>
           <div class="relative">
@@ -68,7 +68,7 @@ export function homePage(state) {
             Explora todos nuestros modelos y encuentra el zapato perfecto para ti
           </p>
           <a href="/products" data-link class="inline-block bg-[#111111] hover:bg-[#2B2B2B] text-white px-10 py-4 rounded-lg transition-colors">
-            Ir al cat&aacute;logo
+            Ir al catálogo
           </a>
         </div>
       </section>

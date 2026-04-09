@@ -14,7 +14,7 @@ export function header() {
         </a>
         <nav class="flex gap-6 sm:gap-8">
           <a href="/" data-link class="hover:text-[#A3E635] transition-colors ${activeLink("/")}">Inicio</a>
-          <a href="/products" data-link class="hover:text-[#A3E635] transition-colors ${activeLink("/products")}">Cat&aacute;logo</a>
+          <a href="/products" data-link class="hover:text-[#A3E635] transition-colors ${activeLink("/products")}">Catálogo</a>
           <a href="/contact" data-link class="hover:text-[#A3E635] transition-colors ${activeLink("/contact")}">Contacto</a>
         </nav>
       </div>

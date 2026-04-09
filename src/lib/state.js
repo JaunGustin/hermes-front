@@ -57,7 +57,7 @@ export async function loadProducts(onComplete) {
     const response = await fetch("/data/products.json");
     state.products = await response.json();
   } catch (error) {
-    console.error("No se pudo cargar el cat&aacute;logo local.", error);
+    console.error("No se pudo cargar el catálogo;logo local.", error);
     state.products = [];
   } finally {
     state.loading = false;
