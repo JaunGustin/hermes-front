@@ -5,7 +5,7 @@ export function productsPage(state) {
   const cards = state.products
     .map(
       (product) => `
-        <article class="relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+        <article class="relative overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-lg">
           <button
             type="button"
             data-favorite-id="${product.id}"
@@ -19,14 +19,14 @@ export function productsPage(state) {
           ${imageMarkup({
             src: product.image,
             alt: product.name,
-            className: "w-full h-full object-cover hover:scale-105 transition-transform duration-300",
+            className: "h-full w-full object-cover transition-transform duration-300 hover:scale-105",
             square: true,
           })}
-          <div class="p-6">
-            <h3 class="text-xl mb-2 text-[#111111]">${escapeHtml(product.name)}</h3>
-            <p class="text-[#2563EB] mb-3">${escapeHtml(product.price)}</p>
-            <p class="text-gray-600 mb-4 text-sm">${escapeHtml(product.shortDescription)}</p>
-            <a href="/product/${product.id}" data-link class="block w-full text-center bg-[#111111] hover:bg-[#2B2B2B] text-white py-2 rounded-lg transition-colors">
+          <div class="p-5 sm:p-6">
+            <h3 class="mb-2 text-lg text-[#111111] sm:text-xl">${escapeHtml(product.name)}</h3>
+            <p class="mb-3 text-[#2563EB]">${escapeHtml(product.price)}</p>
+            <p class="mb-4 text-sm text-gray-600">${escapeHtml(product.shortDescription)}</p>
+            <a href="/product/${product.id}" data-link class="block w-full rounded-lg bg-[#111111] py-3 text-center text-white transition-colors hover:bg-[#2B2B2B] sm:py-2">
               Ver m&aacute;s
             </a>
           </div>
@@ -37,12 +37,12 @@ export function productsPage(state) {
 
   return `
     <div class="min-h-screen bg-[#F5F5F5]">
-      <div class="max-w-7xl mx-auto py-16 px-6">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl mb-4 text-[#111111]">Nuestro catálogo</h1>
-          <p class="text-xl text-gray-600">Descubre todos nuestros modelos de zapatos deportivos</p>
+      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+        <div class="mb-10 text-center sm:mb-12">
+          <h1 class="mb-4 text-3xl text-[#111111] sm:text-4xl">Nuestro cat&aacute;logo</h1>
+          <p class="text-base text-gray-600 sm:text-xl">Descubre todos nuestros modelos de zapatos deportivos</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           ${cards}
         </div>
       </div>
